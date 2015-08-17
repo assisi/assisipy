@@ -12,6 +12,7 @@ sim-01 :
         # The brackets around additional files are necessary,
         # because the deployment tool expects a list!
         extra : [controllers/additional_file_1.dummy]
+        output: [calibration_file.test]
     casu-002 : 
         hostname : localhost
         user : assisi

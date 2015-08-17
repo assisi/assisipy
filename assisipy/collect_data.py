@@ -75,10 +75,16 @@ class DataCollector:
                 with settings(host_string = self.dep[layer][casu]['hostname'],
                               user = self.dep[layer][casu]['user'],
                               warn_only = True):
-                    targetfiles = os.path.join(self.dep[layer][casu]['prefix'], layer, casu, '*.csv')
-                    get(targetfiles,'.')
-                    if self.clean:
-                        run('rm ' + targetfiles)
+                    targetfiles = []
+                    if 'output' in self.dep[layer][casu]:
+                        for outfile in self.dep[layer][casu]['output']:
+                            targetfiles.append(os.path.join(self.dep[layer][casu]['prefix'],layer,casu,outfile))
+                    targetfiles.append(os.path.join(self.dep[layer][casu]['prefix'], layer, casu, '*.csv'))
+
+                    for target in targetfiles:
+                        get(target,'.')
+                        if self.clean:
+                            run('rm ' + target)
 
             os.chdir('..')
 

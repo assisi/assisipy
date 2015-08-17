@@ -13,6 +13,10 @@ import time
 
 if __name__ == '__main__':
 
+    f = open('calibration_file.test','w')
+    f.writelines(['Dummy file.','this is a test'])
+    f.close()
+
     c = casu.Casu(sys.argv[1], log=True)
 
     counter = 0
