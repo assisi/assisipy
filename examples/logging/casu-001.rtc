@@ -3,7 +3,7 @@
 
 # Name of the Casu to connect to
 # Casu naming convention is casu-0xy, where xy is the casu number,
-name     : casu-001
+name     : casu-002
 
 # Address at which the Casu listens for incoming commands
 # (i.e., the address to which the controller publishes

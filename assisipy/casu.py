@@ -536,18 +536,28 @@ class Casu:
                                   light.SerializeToString()])
         self.__write_to_log(["dled_ref", time.time(), 0, 0, 0])
 
-    def set_airflow_intensity(self, intensity, id = AIRFLOW_ACT):
+    def set_airflow(self, state = "", id = AIRFLOW_ACT):
         """
         Set the airflow intensity.
 
         :param float intensity: Airflow intensity (in precentage of maximum actuator value).
         """
-        int_msg = dev_msgs_pb2.Airflow()
-        int_msg.intensity = intensity
-        self.__pub.send_multipart([self.__name, "Airflow", "On",
-                                   int_msg.SerializeToString()])
-        self.__write_to_log(["airflow_ref", time.time(), intensity])
+        states = ["on", "off"]
 
+        if state in states:
+            self.__pub.send_multipart([self.__name, "Airflow", state, ""])
+            self.__write_to_log(["airflow_set", time.time(), state])
+            success = True
+        else:
+            print('Invalid airflow state')
+            success = False
+
+        return success
+
+
+
+
+    '''
     def airflow_standby(self, id  = AIRFLOW_ACT):
         """
         Puts the airflow actuator on standby.
@@ -557,6 +567,7 @@ class Casu:
         self.__pub.send_multipart([self.__name, "Airflow", "Off",
                                    int_msg.SerializeToString()])
         self.__write_to_log(["airflow_ref", time.time(), 0])
+    '''
 
     def send_message(self, direction, msg):
         """

@@ -11,7 +11,7 @@ name     : casu-003
 # 
 # Default value (local simulator and on-Casu deployment):
 # tcp://127.0.0.1:5556
-pub_addr : tcp://casu-003:1556
+pub_addr : tcp://casu-003:3556
 
 # Address to which the Casu publishes sensor data
 # (i.e., address from which the controller
@@ -19,7 +19,7 @@ pub_addr : tcp://casu-003:1556
 #
 # Default value (local simulator and on-Casu deployment):
 # tcp://127.0.0.1:5555
-sub_addr : tcp://casu-003:1555
+sub_addr : tcp://casu-003:3555
 
 # Messaging socket address
 # tcp://*:50102 will work for both simulation and deployment
