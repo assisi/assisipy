@@ -1,6 +1,12 @@
 assisi-python
 =============
 
+.. image:: https://badge.fury.io/py/assisipy.svg
+    :target: https://badge.fury.io/py/assisipy
+
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.1320079.svg
+   :target: https://dx.doi.org/10.5281/zenodo.1320079
+
 Python API for the `ASSISI|bf <http://assisi-project.eu/>`__ project.
 
 The API can be used to interact with CASUs and other system components, whether
