@@ -4,5 +4,5 @@ It works both with simulated CASUS and pyhsical devices. It also provides severa
 classes for interacting with the simulation engine.
 """
 
-__version__ = '0.16.0'
+__version__ = '0.16.1'
 
